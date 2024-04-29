@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Credit Card Fraud</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1 style="width:1500px; height:1px">Credit Card Fraud</h1>
+    </header>
+    <div class="container">
+        <form id="prediction-form" action="/submit" method="post">
+            <label for="limit_bal">Limit Balance:</label>
+            <input type="number" id="limit_bal" name="limit_bal" placeholder="Enter Limit Balance" required>
+
+            <label for="sex">Sex:</label>
+            <input type="number" id="sex" name="sex" placeholder="1-Male 2-Female" required>
+
+            <label for="education">Education:</label>
+            <input type="number" id="education" name="education" placeholder="1-Graduate 2-PG 3-High School 4-Other" required>
+
+            <label for="marriage">Marriage:</label>
+            <input type="number" id="marriage" name="marriage" placeholder="1-Married, 2-Single 3-Other" required>
+
+            <label for="age">Age:</label>
+            <input type="number" id="age" name="age" min="1" max="100" placeholder="Enter Age" required>
+
+            <label for="pay_0">Payment Status-Sept:</label>
+            <input type="number" id="pay_0" name="pay_0" min="-2" max="8" placeholder="x<=0:paid on time, 1<x<9:payment delay by x month" required>
+
+            <label for="pay_2">Payment Status-Aug:</label>
+            <input type="number" id="pay_2" name="pay_2" min="-2" max="8" placeholder="x<=0:paid on time, 1<x<9:payment delay by x month" required>
+
+            <label for="pay_4">Payment Status-June:</label>
+            <input type="number" id="pay_4" name="pay_4" min="-2" max="8" placeholder="x<=0:paid on time, 1<x<9:payment delay by x month" required>
+
+            <label for="pay_5">Payment Status-May:</label>
+            <input type="number" id="pay_5" name="pay_5" min="-2" max="8" placeholder="x<=0:paid on time, 1<x<9:payment delay by x month" required>
+
+            <label for="pay_6">Payment Status-April:</label>
+            <input type="number" id="pay_6" name="pay_6" min="-2" max="8" placeholder="x<=0:paid on time, 1<x<9:payment delay by x month" required>
+
+            <label for="prev_payment">Previous Payments:</label>
+            <input type="number" id="prev_payment" name="prev_payment" placeholder="Previous Payment" required><br>
+
+            <button type="submit">Predict</button>
+        </form>
+    </div>
+
+</body>
+</html>
