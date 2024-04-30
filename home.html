@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Credit Card Fraud Detection</title>
+<!--    <link rel="stylesheet" href="styles.css">-->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Credit Card Defaulter</h1>
+    </header>
+    <div class="container">
+        <form id="prediction-form" action="/submit" method="post">
+            <div class="input-group">
+                <label for="limit_bal">Limit Balance:</label>
+                <input type="number" id="limit_bal" name="limit_bal" placeholder="Enter Limit Balance" required>
+            </div>
+
+            <div class="input-group">
+                <label for="sex">Gender:</label>
+                <select name="sex" id="sex">
+                    <option value="1">Male</option>
+                    <option value="2">Female</option>
+                </select>
+            </div>
+
+            <div class="input-group">
+                <label for="education">Education Level:</label>
+                <select name="education" id="education">
+                    <option value="3">High School</option>
+                    <option value="1">Graduate</option>
+                    <option value="2">University</option>
+                    <option value="4">Others</option>
+                </select>
+            </div>
+
+            <div class="input-group">
+                <label for="marriage">Marital Status:</label>
+                <select name="marriage" id="marriage">
+                    <option value="1">Single</option>
+                    <option value="2">Married</option>
+                    <option value="3">Others</option>
+                </select>
+            </div>
+
+            <div class="input-group">
+                <label for="age">Age:</label>
+                <input type="number" id="age" name="age" placeholder="Enter Age" required>
+            </div>
+
+            <div class="repayment-status"><br>
+                <label>Repayment Status:</label>
+                <div class="repayment-month">
+                    <label for="repayment_status_april">April:</label>
+                    <select name="pay_6" id="repayment_status_april">
+                        <option value="-2">-2</option>
+                        <option value="-1">-1</option>
+                        <option value="0">0</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                    </select>
+                </div>
+                <div class="repayment-month"><br>
+                    <label for="repayment_status_may">May:</label>
+                    <select name="pay_5" id="repayment_status_may">
+                       <option value="-2">-2</option>
+                        <option value="-1">-1</option>
+                        <option value="0">0</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                    </select>
+                </div>
+                <div class="repayment-month"><br>
+                    <label for="repayment_status_june">June:</label>
+                    <select name="pay_4" id="repayment_status_june">
+                       <option value="-2">-2</option>
+                        <option value="-1">-1</option>
+                        <option value="0">0</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                    </select>
+                </div>
+                <div class="repayment-month"><br>
+                    <label for="repayment_status_july">July:</label>
+                    <select name="pay_2" id="repayment_status_july">
+                        <option value="-2">-2</option>
+                        <option value="-1">-1</option>
+                        <option value="0">0</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option><
+                    </select>
+                </div>
+                <div class="repayment-month"><br>
+
+                    </select>
+                </div>
+                <div class="repayment-month">
+                    <label for="repayment_status_sept">September:</label>
+                    <select name="pay_0" id="repayment_status_sept">
+                        <option value="-2">-2</option>
+                        <option value="-1">-1</option>
+                        <option value="0">0</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                    </select>
+                </div>
+            </div>
+            <br><br>
+            <div class="input-group">
+                <label for="prev_payment">Previous Payments:</label>
+                <input type="number" id="prev_payment" name="prev_payment" placeholder="Previous Payment" required>
+            </div>
+
+            <button type="submit">Predict</button>
+        </form>
+    </div>
+</body>
+</html>
