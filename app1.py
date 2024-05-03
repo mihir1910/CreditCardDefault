@@ -68,7 +68,6 @@ def main():
     # Payment status options dictionary
     pay_options = {
         "-2": "Paid on time",
-        "0": "Revolving credit",
         "1": "Delay by 1 month",
         "2": "Delay by 2 months",
         "3": "Delay by 3 months",
