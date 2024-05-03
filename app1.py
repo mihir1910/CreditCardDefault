@@ -31,9 +31,10 @@ def main():
         """
         <style>
         body {
-            background-color: red;
-        }
-        </style>
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background:rgb(130, 106, 251)
         """,
         unsafe_allow_html=True
     )
@@ -59,11 +60,11 @@ def main():
     st.markdown('<div class="header"><h1>Streamlit Credit Card Defaulter ML App</h1></div>', unsafe_allow_html=True)
 
     # Input fields
-    limit_bal = st.text_input("Credit Limit", "Type Here")
+    limit_bal = st.text_input("Credit Limit", " ")
     sex = st.selectbox("Sex", ["Male", "Female"])
     education = st.selectbox("Education", ["Graduate School", "University", "High School", "Others"])
     marriage = st.selectbox("Marital Status", ["Married", "Single", "Others"])
-    age = st.text_input("Age", "Type Here")
+    age = st.text_input("Age", " ")
 
     # Payment status options dictionary
     pay_options = {
@@ -79,17 +80,17 @@ def main():
     }
 
     # Payment status select boxes
-    pay_0 = st.selectbox("Payment Status (September)", options=list(pay_options.keys()),
+    pay_6 = st.selectbox("Payment Status (April)", options=list(pay_options.keys()),
+                         format_func=lambda x: pay_options[x])
+    pay_5 = st.selectbox("Payment Status (May)", options=list(pay_options.keys()), format_func=lambda x: pay_options[x])
+    pay_4 = st.selectbox("Payment Status (June)", options=list(pay_options.keys()),
                          format_func=lambda x: pay_options[x])
     pay_2 = st.selectbox("Payment Status (August)", options=list(pay_options.keys()),
                          format_func=lambda x: pay_options[x])
-    pay_4 = st.selectbox("Payment Status (June)", options=list(pay_options.keys()),
-                         format_func=lambda x: pay_options[x])
-    pay_5 = st.selectbox("Payment Status (May)", options=list(pay_options.keys()), format_func=lambda x: pay_options[x])
-    pay_6 = st.selectbox("Payment Status (April)", options=list(pay_options.keys()),
+    pay_0 = st.selectbox("Payment Status (September)", options=list(pay_options.keys()),
                          format_func=lambda x: pay_options[x])
 
-    prev_payment = st.text_input("Previous Payment Amount", "Type Here")
+    prev_payment = st.text_input("Previous Payment Amount", " ")
 
     # Prediction
     if st.button("Predict"):
